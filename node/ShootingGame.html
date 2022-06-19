@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Game</title>
+    <link rel="stylesheet" href="./shooting.css" type="text/css">
+</head>
+
+<body>
+    <div class="container" style="width: 100%;">
+
+        <!-- game Menu -->
+        <div class="game-setup">
+            <div>
+                <h1><b>Game-</b><b id="round">1</b></h1>
+                <button id="start-button" onclick="displayGame()">Start Game</button><br>
+                <b>Player 1 - Won: </b> <b id="p1won">0</b><br><br>
+                <b>Player 2 - Won: </b> <b id="p2won">0</b>
+                <h1 id="winner"></h1>
+            </div><br>
+        </div>
+        <!-- game display setup -->
+        <div id="game-area">
+            <div class="display-header">
+                <div class="display">
+                    <div id="container" class="bullets">
+                        <h1 id="animate1" class="bullet1">.</h1>
+                        <h1 id="animate2" class="bullet2">.</h1>
+                    </div>
+                    <div class="players">
+                        <img class="player1"
+                            src="https://cdn.pixabay.com/photo/2018/10/03/17/54/silhouette-3722022__340.png"
+                            alt="">
+                        <img class="player2"
+                            src="https://spng.subpng.com/20190723/yps/kisspng-catcher-baseball-softball-clip-art-batter-m-blox-captac-custom-hat-clips-5d372cc16b2015.5753728915638970254388.jpg"
+                            alt="">
+                    </div>
+                 </div>
+            </div>
+            <!-- player controls and info -->
+            <div style="text-align: center;">
+                <h3>Player 1 Health: </h3>
+                <h3 id="p1health">100</h3>
+                <h3>Player 2 Health: </h3>
+                <h3 id="p2health">100</h3>
+            </div>
+            <div class="shootButtonArea" style="text-align: center">
+                <button id="shoot-button" onclick="shoot()">shoot</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // start button make visible the game
+
+        function displayGame() {
+            document.getElementById("game-area").style.visibility = "visible"
+        }
+        // shoot button setup //
+        function shoot() {
+            let id = null;
+            const elem = document.getElementById("animate1");
+            const elem2 = document.getElementById("animate2");
+            let pos = 0;
+            for (let i = 1; i <= 1; i++) {
+                let damage1 = Math.floor(Math.random() * 5) + 1;                
+                let p1health = document.getElementById("p1health").innerHTML;
+                p1health = p1health - damage1
+
+                document.getElementById("p1health").innerHTML = p1health;
+                if (p1health <= 0) {
+                    alert("Player 2 win the round");
+
+                    let p2won = document.getElementById("p2won").innerHTML
+                    p2won = parseInt(p2won) + 1
+                    document.getElementById("p2won").innerHTML = p2won
+                    document.getElementById("p1health").innerHTML = 100
+                    document.getElementById("p2health").innerHTML = 100
+                    document.getElementById("game-area").style.visibility = "hidden"
+                    let round = document.getElementById("round").innerHTML;
+
+                    if (p2won == 3) {
+                        document.getElementById("winner").innerHTML = "Player 2 won the Match"
+                        document.getElementById("start-button").style.visibility = "hidden"
+                    } else {
+                        document.getElementById("round").innerHTML = parseInt(round) + 1
+                    }
+
+                }
+            }
+
+            for (let i = 1; i <= 1; i++) {
+                // Generating random damage
+                let damage2 = Math.floor(Math.random() * 5) + 1
+                let p2health = document.getElementById("p2health").innerHTML;
+                p2health = p2health - damage2
+                document.getElementById("p2health").innerHTML = p2health
+                if (p2health <= 0) {
+                    alert("Player 1 win the round");
+                    let p1won = document.getElementById("p1won").innerHTML
+                    p1won = parseInt(p1won) + 1
+                    document.getElementById("p1won").innerHTML = p1won
+                    document.getElementById("p1health").innerHTML = 100
+                    document.getElementById("p2health").innerHTML = 100
+                    document.getElementById("game-area").style.visibility = "hidden"
+                    let round = document.getElementById("round").innerHTML;
+                    if (p1won == 3) {
+                        document.getElementById("winner").innerHTML = "Player 1 won the Match"
+                        document.getElementById("start-button").style.visibility = "hidden"
+                    }
+                    else {
+                        document.getElementById("round").innerHTML = parseInt(round) + 1
+                    }
+
+                }
+
+                clearInterval(id);
+                id = setInterval(frame, 0);
+                function frame() {
+                    if (pos == 170) {
+                        clearInterval(id);
+                    } else {
+                        pos++;
+                        elem.style.left = pos + "px";
+                        elem2.style.right = pos + "px";
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+<!-- coded and developed by gmananthu2@gmail.com -->
+<!-- I didn't use JQuery because recruiter mention javascript -->

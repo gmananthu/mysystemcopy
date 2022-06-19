@@ -1,0 +1,21 @@
+#divaa{
+    background:red;
+    width:50%;
+    float:left;
+}
+#divab{
+    background:green;
+    width:500px;
+    height:500px;
+    float:left;
+}
+.btndiv{
+    width: 100px;
+    height: 300px;
+}
+.btn{
+    background-color:brown;
+    border: solid;
+    border-color:blueviolet;
+    
+}

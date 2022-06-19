@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script src="anansc.js"></script>
+</head>
+<body>
+   <div style="width: 100%;height: 1000px;">
+    <div style="margin-left:300px;margin-top: 100px">   
+    <table style="border:solid 2px">
+<tbody>
+    <tr style="background: red">
+        <td>
+            <input type="text" id="inp">
+        </td>
+    </tr>
+    </tbody>
+    </table></div>
+    <div style="margin-left: 300px;">
+    <table style="border:solid 2px">
+        <tbody>
+    <tr style="background: green;">
+<td>
+    <button type="button" onclick="btnclk('+')">+</button>
+</td>
+<td>
+    <button type="button" onclick="btnclk('-')">-</button>
+</td>
+<td>
+    <button type="button" onclick="btnclk('*')">x</button>
+</td>
+<td>
+    <button type="button" onclick="btnresult()">result</button>
+</td>
+<td>
+    <button type="button" onclick="btnclk(6)">6</button>
+</td>
+</tr>
+<tr>
+<td>
+    <button type="button" onclick="clr()">clear</button> 
+</td><td>
+    <button type="button" onclick="btnclk(3)">3</button>
+</td>
+
+    </tr>
+</tbody>
+</table>
+    </div>
+   </div>
+</body>
+</html>

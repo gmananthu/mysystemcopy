@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>"
+
+</head>
+<body>
+    <div style="width:100%;height:1000px">
+        <div style="width:500px;margin-left: 300px"><h2 style="text-align: center;">Validate Form</h2></div>
+        <div style="width:500px;margin-left: 300px">
+            <form id="loginform">
+                <label>Enter name</label>
+                <input type="text" name="fname"><br>
+                <label>Enter phone number</label>
+                <input type="number" name="mobile"><br>
+                <label for="">Date of Birth</label>
+                <select name="" id="day">
+                    <option value="">day</option>
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+                <select name="" id="">
+                    <option value="">month</option>
+                    <option value="">jan</option>
+                    <option value="">feb</option>
+
+                </select>
+                <select name="" id="">
+                    <option value="">year</option>
+                    <option value="">1999</option>
+                    <option value="">2000</option>
+
+                </select><br>
+
+                <label>Gender</label>
+                <input type="radio" name="gender">male
+                <input type="radio" name="gender">female <br>
+
+                <input type="submit" value="login">
+
+            </form>
+</div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+<script src="validate.js"></script>
+</body>
+</html>

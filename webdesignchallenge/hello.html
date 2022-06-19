@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+<div id="divaa">
+    <input type="text" id="demo">
+</div>
+<div id="divab">hello</div>
+<div class="btndiv">
+    <button onclick="btnclick()" id="btn1" class="btn" type="button" value="yellow">yellow</button>
+    <button onclick="btnclicked('red')" class="btn" type="button">red</button>
+    <button onclick="btnclicked('blue')" class="btn" type="button">blue</button>
+    <button onclick="btnclicked('cyan')" class="btn" type="button">cyan</button>
+    <h1 id="display"></h1>
+</div>
+    </div>
+    <script>
+        function btnclick()
+        {
+           var text=document.getElementById("btn1").value
+           document.getElementById('divab').style.background=text
+           alert(text)
+        }
+
+        function btnclicked(col){
+            document.getElementById('divab').style.background=col
+        }   </script>
+</body>
+</html>
